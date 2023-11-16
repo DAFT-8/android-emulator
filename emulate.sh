@@ -11,10 +11,7 @@ SDKMANAGER="$HOME/commandline-tools/cmdline-tools/bin/sdkmanager"
 
 AVD_NAME="my_avd"
 
-#[[ -e $HOME/build-tools.zip ]] || wget -O $HOME/build-tools.zip 'https://dl.google.com/android/repository/build-tools_r25-linux.zip' && [[ -d $HOME/build-tools ]] || unzip $HOME/build-tools.zip -d $HOME/build-tools/
 [[ -e $HOME/commandline-tools.zip ]] || wget -O $HOME/commandline-tools.zip 'https://dl.google.com/android/repository/commandlinetools-linux-9123335_latest.zip' && [[ -d $HOME/commandline-tools ]] || unzip $HOME/commandline-tools.zip -d $HOME/commandline-tools/
-#[[ -e $HOME/platforms.zip ]] || wget -O $HOME/platforms.zip 'https://dl.google.com/android/repository/android-16_r05.zip' && [[ -d $HOME/platforms ]] || unzip $HOME/platforms.zip -d $HOME/platforms/
-#[[ -e $HOME/platform-tools.zip ]] || wget -O $HOME/platform-tools.zip 'https://dl.google.com/android/repository/platform-tools-latest-linux.zip' && [[ -d $HOME/platform-tools ]] || unzip $HOME/platform-tools.zip -d $HOME/platform-tools/
 
 yes | $SDKMANAGER --install "emulator" "platforms;android-30" --sdk_root=$HOME/
 yes | $SDKMANAGER "system-images;android-30;google_apis_playstore;x86_64" --sdk_root=$HOME/
