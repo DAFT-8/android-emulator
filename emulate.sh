@@ -18,6 +18,7 @@ AVD_NAME="my_avd"
 
 yes | $SDKMANAGER --install "emulator" "platforms;android-30" --sdk_root=$HOME/
 yes | $SDKMANAGER "system-images;android-30;google_apis_playstore;x86_64" --sdk_root=$HOME/
+yes | $SDKMANAGER --update --sdk_root=$HOME/
 
 [[ -d $HOME/.android/avd/$AVD_NAME.avd ]] && $AVDMANAGER delete avd -n $AVD_NAME
 echo 'no' | $AVDMANAGER create avd -n $AVD_NAME -k "system-images;android-30;google_apis_playstore;x86_64" --force
