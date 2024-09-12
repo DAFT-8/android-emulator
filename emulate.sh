@@ -28,5 +28,3 @@ echo 'no' | $AVDMANAGER create avd -n $AVD_NAME -k "system-images;android-30;goo
 echo "All done! Running the device..."
 
 $EMULATOR -avd $AVD_NAME
-
-exit
