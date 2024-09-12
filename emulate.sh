@@ -19,7 +19,7 @@ yes | $SDKMANAGER "system-images;android-30;google_apis_playstore;x86_64" --sdk_
 yes | $SDKMANAGER --update --sdk_root=$HOME/
 
 # Comment these lines to keep avd data
-[[ -d $HOME/.android/avd/$AVD_NAME.avd ]] && rm -rfd $HOME/.android/avd/$AVD_NAME.avd/
+[[ -d $HOME/.android/avd/$AVD_NAME.avd ]] && rm -rfd $HOME/.android/avd/$AVD_NAME.avd/*
 echo 'no' | $AVDMANAGER create avd -n $AVD_NAME -k "system-images;android-30;google_apis_playstore;x86_64" -p "$HOME/.android/avd/$AVD_NAME.avd/" --force
 
 [[ -d $HOME/.android/avd/$AVD_NAME.avd ]] && sed -i -e 's/PlayStore.enabled.*/PlayStore.enabled = yes/' $HOME/.android/avd/$AVD_NAME.avd/config.ini
